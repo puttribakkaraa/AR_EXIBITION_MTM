@@ -69,6 +69,29 @@
             </div>
         </section>
 
+        <!-- Debug Exhibit: Astronaut -->
+        <section class="exhibit-card" style="border: 2px dashed #03dac6;">
+            <div class="model-wrapper">
+                <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" shadow-intensity="1" ar
+                    ar-placement="floor" ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y"
+                    alt="A 3D model of an Astronaut">
+
+                    <button slot="ar-button" class="ar-button">
+                        Test Control (Astronaut)
+                    </button>
+
+                    <div id="ar-prompt">
+                        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                    </div>
+                </model-viewer>
+            </div>
+            <div class="exhibit-info">
+                <h2 style="color: #03dac6;">Test Object: Astronaut</h2>
+                <p>Use this to test if AR works on your phone. If this works but your models don't, your models need
+                    resizing.</p>
+            </div>
+        </section>
+
     </main>
 
     <footer>
