@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Exhibition Experience</title>
+    <meta name="description" content="Augmented Reality Exhibition - View 3D models in your space.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Model Viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AR Exhibition</h1>
+            <p>Scan, View, & Experience in AR</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Exhibit 1 -->
+        <section class="exhibit-card">
+            <div class="model-wrapper">
+                <model-viewer 
+                    src="assets/AssyHubAxle.glb" 
+                    poster="assets/poster-hub.png" 
+                    shadow-intensity="1" 
+                    ar 
+                    ar-modes="webxr scene-viewer quick-look" 
+                    camera-controls 
+                    touch-action="pan-y" 
+                    alt="A 3D model of Assy Hub Axle">
+                    
+                    <button slot="ar-button" class="ar-button">
+                        View in your space
+                    </button>
+                    
+                    <div id="ar-prompt">
+                        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                    </div>
+                </model-viewer>
+            </div>
+            <div class="exhibit-info">
+                <h2>Assy Hub Axle</h2>
+                <p>Interactive 3D component. Tap the AR button to see it in real size.</p>
+            </div>
+        </section>
+
+        <!-- Exhibit 2 -->
+        <section class="exhibit-card">
+            <div class="model-wrapper">
+                <model-viewer 
+                    src="assets/stemassy.glb" 
+                    poster="assets/poster-stem.png" 
+                    shadow-intensity="1" 
+                    ar 
+                    ar-modes="webxr scene-viewer quick-look" 
+                    camera-controls 
+                    touch-action="pan-y" 
+                    alt="A 3D model of Stem Assy">
+
+                    <button slot="ar-button" class="ar-button">
+                        View in your space
+                    </button>
+
+                    <div id="ar-prompt">
+                        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+                    </div>
+                </model-viewer>
+            </div>
+            <div class="exhibit-info">
+                <h2>Stem Assy</h2>
+                <p>High precision stem assembly model. Explore details in 360°.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AR Exhibition. Powered by WebAR.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

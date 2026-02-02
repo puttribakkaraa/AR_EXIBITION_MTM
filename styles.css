@@ -1,0 +1,166 @@
+:root {
+    --primary-color: #6200ea;
+    --secondary-color: #03dac6;
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-color: #ffffff;
+    --text-secondary: #b0b0b0;
+    --font-main: 'Outfit', sans-serif;
+    --spacing-md: 1.5rem;
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    background: linear-gradient(180deg, rgba(98, 0, 234, 0.1) 0%, rgba(18, 18, 18, 0) 100%);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #fff, #b0b0b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Exhibit Cards */
+.exhibit-card {
+    background-color: var(--surface-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.exhibit-card:hover {
+    transform: translateY(-5px);
+}
+
+.model-wrapper {
+    height: 400px;
+    background-color: #2a2a2a;
+    position: relative;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    background-color: #252525;
+    --poster-color: transparent;
+}
+
+.exhibit-info {
+    padding: 1.5rem;
+}
+
+.exhibit-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.exhibit-info p {
+    color: var(--text-secondary);
+}
+
+/* AR Button Styling */
+.ar-button {
+    background-color: var(--primary-color);
+    border-radius: 28px;
+    border: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    padding: 12px 24px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(98, 0, 234, 0.4);
+    transition: background-color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ar-button:hover {
+    background-color: #7b1fa2;
+    transform: scale(1.05);
+}
+
+.ar-button:active {
+    transform: scale(0.95);
+}
+
+.ar-button::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3 4c0-1.1.9-2 2-2h4v2H5v4H3V4zm0 16c0 1.1.9 2 2 2h4v-2H5v-4H3v4zm18-16c0-1.1-.9-2-2-2h-4v2h4v4h2V4zm0 16c0 1.1-.9 2-2 2h-4v-2h4v-4h2v4zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* AR Prompt Hand Animation */
+#ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: notify 2s infinite;
+    display: none; /* Model viewer handles this */
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 2rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .model-wrapper {
+        height: 350px;
+    }
+}
